@@ -197,20 +197,12 @@
     <!-- MÓDULO DE 3 COLUMNAS: VIDEOS DUALES IZQUIERDOS | CARRUSEL CENTRAL | VIDEOS DUALES DERECHOS -->
     <section class="grid grid-cols-1 md:grid-cols-[30%_40%_30%] w-full max-w-[1400px] mx-auto bg-slate-950 border-b border-slate-800/40 shadow-xl" aria-label="Contenido destacado">
         <!-- Panel Izquierdo: 2 Videos Verticales Apilados (50% de altura cada uno en desktop) -->
-        <div class="flex flex-col w-full h-[380px] md:h-[600px] order-2 md:order-1 border-r border-slate-800/40">
-            <!-- Video Izquierdo 1 -->
-            <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="relative overflow-hidden w-full h-1/2 group block cursor-pointer border-b border-slate-800/40">
-                <video autoplay muted playsinline class="absolute inset-0 w-full h-full object-cover object-tech-bazar transition-transform duration-[1200ms] ease-out group-hover:scale-105 pointer-events-none">
-                    <source src="assets/img/video-1786220451054.mp4" type="video/mp4">
-                </video>
-            </a>
-            <!-- Video Izquierdo 2 -->
-            <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="relative overflow-hidden w-full h-1/2 group block cursor-pointer">
-                <video autoplay muted playsinline class="absolute inset-0 w-full h-full object-cover object-tech-bazar transition-transform duration-[1200ms] ease-out group-hover:scale-105 pointer-events-none">
-                    <source src="assets/img/video-1786220460405.mp4" type="video/mp4">
-                </video>
-            </a>
-        </div>
+        <!-- Panel Izquierdo: Un solo video dinámico secuencial -->
+        <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="relative overflow-hidden w-full h-[380px] md:h-[600px] order-2 md:order-1 group block cursor-pointer border-r border-slate-800/40">
+            <video id="leftPlaylistVideo" autoplay muted playsinline class="absolute inset-0 w-full h-full object-cover object-tech-bazar transition-transform duration-[1200ms] ease-out group-hover:scale-105 pointer-events-none">
+                <source id="leftVideoSource" src="assets/img/video-1786220451054.mp4" type="video/mp4">
+            </video>
+        </a>
 
         <!-- Panel Central: Carrusel Principal de Secciones de Cigarros (5 diapositivas) -->
         <div class="relative overflow-hidden w-full h-[380px] md:h-[600px] order-1 md:order-2 bg-slate-950 border-r border-slate-800/40">
@@ -289,21 +281,12 @@
             </div>
         </div>
 
-        <!-- Panel Derecho: 2 Videos Verticales Apilados (50% de altura cada uno en desktop) -->
-        <div class="flex flex-col w-full h-[380px] md:h-[600px] order-3 md:order-3 border-l border-slate-800/40">
-            <!-- Video Derecho 1 -->
-            <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="relative overflow-hidden w-full h-1/2 group block cursor-pointer border-b border-slate-800/40">
-                <video autoplay muted playsinline class="absolute inset-0 w-full h-full object-cover object-tiger-bazar transition-transform duration-[1200ms] ease-out group-hover:scale-105 pointer-events-none">
-                    <source src="assets/img/video-1786220466929.mp4" type="video/mp4">
-                </video>
-            </a>
-            <!-- Video Derecho 2 -->
-            <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="relative overflow-hidden w-full h-1/2 group block cursor-pointer">
-                <video autoplay muted playsinline class="absolute inset-0 w-full h-full object-cover object-tiger-bazar transition-transform duration-[1200ms] ease-out group-hover:scale-105 pointer-events-none">
-                    <source src="assets/img/video-1786220469679.mp4" type="video/mp4">
-                </video>
-            </a>
-        </div>
+        <!-- Panel Derecho: Un solo video dinámico secuencial -->
+        <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="relative overflow-hidden w-full h-[380px] md:h-[600px] order-3 md:order-3 group block cursor-pointer border-l border-slate-800/40">
+            <video id="rightPlaylistVideo" autoplay muted playsinline class="absolute inset-0 w-full h-full object-cover object-tiger-bazar transition-transform duration-[1200ms] ease-out group-hover:scale-105 pointer-events-none">
+                <source id="rightVideoSource" src="assets/img/video-1786220466929.mp4" type="video/mp4">
+            </video>
+        </a>
     </section>
 
     <!-- CRÉDITO DE LA INTELIGENCIA ARTIFICIAL EN ESCRITORIO Y MÓVIL -->
@@ -357,39 +340,65 @@
             setCenterSlide(nextIndex);
         }, 4500);
 
-        // Ajustar velocidad de videos y pausar 5 segundos al finalizar
+        // Ajustar velocidad de videos y reproducirlos secuencialmente (playlist en bucle) con pausa de 5s
+        const leftVideos = [
+            "assets/img/video-1786220451054.mp4",
+            "assets/img/video-1786220460405.mp4"
+        ];
+        const rightVideos = [
+            "assets/img/video-1786220466929.mp4",
+            "assets/img/video-1786220469679.mp4"
+        ];
+
+        let currentLeftIndex = 0;
+        let currentRightIndex = 0;
+
         function initVideos() {
-            const videos = document.querySelectorAll('video');
-            
+            const leftVideo = document.getElementById('leftPlaylistVideo');
+            const rightVideo = document.getElementById('rightPlaylistVideo');
+
             const forcePlayAll = () => {
-                videos.forEach(video => {
-                    video.playbackRate = 0.6;
-                    if (video.paused) {
-                        video.play().catch(err => console.log("Fuerza de reproduccion video fallida:", err));
+                [leftVideo, rightVideo].forEach(video => {
+                    if (video) {
+                        video.playbackRate = 0.6;
+                        if (video.paused) {
+                            video.play().catch(err => console.log("Fuerza play:", err));
+                        }
                     }
                 });
             };
 
-            // Asegurar reproduccion simultanea al primer toque o click en la pantalla (desbloqueo movil)
             document.addEventListener('click', forcePlayAll, { once: true });
             document.addEventListener('touchstart', forcePlayAll, { once: true });
 
-            videos.forEach(video => {
-                video.loop = false;
-                video.playbackRate = 0.6;
-                video.addEventListener('play', () => {
-                    video.playbackRate = 0.6;
+            const setupSequentialVideo = (videoEl, videoList, getIndexFn, setIndexFn) => {
+                if (!videoEl) return;
+                videoEl.loop = false;
+                videoEl.playbackRate = 0.6;
+
+                videoEl.addEventListener('play', () => {
+                    videoEl.playbackRate = 0.6;
                 });
-                video.addEventListener('ended', () => {
+
+                videoEl.addEventListener('ended', () => {
                     setTimeout(() => {
-                        video.playbackRate = 0.6;
-                        video.play().catch(err => console.log("Reinicio de video prevenido:", err));
+                        let nextIndex = (getIndexFn() + 1) % videoList.length;
+                        setIndexFn(nextIndex);
+                        
+                        videoEl.src = videoList[nextIndex];
+                        videoEl.load();
+                        videoEl.playbackRate = 0.6;
+                        videoEl.play().catch(err => console.log("Reinicio secuencial prevenido:", err));
                     }, 5000);
                 });
-                if (video.paused) {
-                    video.play().catch(err => console.log("Autoplay de video:", err));
+
+                if (videoEl.paused) {
+                    videoEl.play().catch(err => console.log("Autoplay:", err));
                 }
-            });
+            };
+
+            setupSequentialVideo(leftVideo, leftVideos, () => currentLeftIndex, (val) => { currentLeftIndex = val; });
+            setupSequentialVideo(rightVideo, rightVideos, () => currentRightIndex, (val) => { currentRightIndex = val; });
         }
 
         if (document.readyState !== 'loading') {
