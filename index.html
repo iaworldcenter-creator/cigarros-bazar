@@ -116,6 +116,9 @@
     }
     </script>
 
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/img/cigarros-1024x576.webp" as="image">
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden">
 <!-- BARRA LATERAL FLOTANTE DE REDES SOCIALES -->
@@ -142,7 +145,7 @@
             
             <!-- Columna central: Logo circular y Marca CENTRADOS -->
             <div class="flex flex-col items-center text-center">
-                <img src="assets/img/mascota_tigre.jpg" alt="Tigre Logo" class="w-16 h-16 rounded-full object-cover border-2 border-blue-500 shadow-md shadow-blue-500/30 mb-2">
+                <img loading="lazy" decoding="async" src="assets/img/mascota_tigre.jpg" alt="Tigre Logo" class="w-16 h-16 rounded-full object-cover border-2 border-blue-500 shadow-md shadow-blue-500/30 mb-2">
                 <span class="text-xl sm:text-2xl font-black tracking-wider text-blue-500 block leading-tight">Puesto de Revistas &amp; Bazar</span>
                 <span class="text-xs font-mono font-bold tracking-widest text-blue-400 block mt-0.5">Cigarros &amp; Tabacos NFL.GDL</span>
             </div>
@@ -242,7 +245,7 @@
         <div class="relative overflow-hidden w-full h-[380px] md:h-[600px] order-1 md:order-2 bg-slate-950 border-r border-slate-800/40">
             <!-- Slide 1: Cigarros Premium -->
             <div class="bazar-center-slide absolute inset-0 w-full h-full opacity-100 z-10 transition-opacity duration-700 ease-in-out group">
-                <img src="assets/img/cigarros-1024x576.webp" alt="Cigarros Premium" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105">
+                <img loading="eager" src="assets/img/cigarros-1024x576.webp" alt="Cigarros Premium" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105">
                 <div class="absolute inset-0 bg-slate-950/60 flex flex-col justify-center items-center text-center p-6 md:p-12 text-white">
                     <span class="text-blue-400 font-mono text-xs uppercase font-bold tracking-widest mb-3">Marcas Principales</span>
                     <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-3 max-w-2xl drop-shadow-md leading-tight">Cigarros &amp; Tabaco Premium</h2>
@@ -255,7 +258,7 @@
 
             <!-- Slide 2: Habanos y Puros -->
             <div class="bazar-center-slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-700 ease-in-out group">
-                <img src="assets/img/R.jpg" alt="Puros Finos y Habanos" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105">
+                <img loading="lazy" decoding="async" src="assets/img/R.jpg" alt="Puros Finos y Habanos" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105">
                 <div class="absolute inset-0 bg-slate-950/60 flex flex-col justify-center items-center text-center p-6 md:p-12 text-white">
                     <span class="text-orange-400 font-mono text-xs uppercase font-bold tracking-widest mb-3">Importados y Especiales</span>
                     <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-3 max-w-2xl drop-shadow-md leading-tight">Puros Finos &amp; Habanos</h2>
@@ -268,7 +271,7 @@
 
             <!-- Slide 3: Encendedores de Colección -->
             <div class="bazar-center-slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-700 ease-in-out group">
-                <img src="assets/img/bloggif_5e8b2c1684147.png" alt="Encendedores de Colección" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105">
+                <img loading="lazy" decoding="async" src="assets/img/bloggif_5e8b2c1684147.png" alt="Encendedores de Colección" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105">
                 <div class="absolute inset-0 bg-slate-950/60 flex flex-col justify-center items-center text-center p-6 md:p-12 text-white">
                     <span class="text-slate-300 font-mono text-xs uppercase font-bold tracking-widest mb-3">Accesorios de Fuego</span>
                     <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-3 max-w-2xl drop-shadow-md leading-tight">Encendedores Zippo &amp; Clipper</h2>
@@ -281,7 +284,7 @@
 
             <!-- Slide 4: Tabaco y Papel de Liar -->
             <div class="bazar-center-slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-700 ease-in-out group">
-                <img src="assets/img/multimedia.normal.b820fa6aa2345a34.Y2lnYXJyaWxsb3Nfbm9ybWFsLndlYnA=.webp" alt="Tabaco para Forjar" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105">
+                <img loading="lazy" decoding="async" src="assets/img/multimedia.normal.b820fa6aa2345a34.Y2lnYXJyaWxsb3Nfbm9ybWFsLndlYnA=.webp" alt="Tabaco para Forjar" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105">
                 <div class="absolute inset-0 bg-slate-950/60 flex flex-col justify-center items-center text-center p-6 md:p-12 text-white">
                     <span class="text-indigo-400 font-mono text-xs uppercase font-bold tracking-widest mb-3">Para Liar o Forjar</span>
                     <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-3 max-w-2xl drop-shadow-md leading-tight">Tabaco de Liar &amp; Accesorios</h2>
@@ -294,7 +297,7 @@
 
             <!-- Slide 5: Accesorios de Lujo -->
             <div class="bazar-center-slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-700 ease-in-out group">
-                <img src="assets/img/i-img600x450-1663059583yzmva8208095.jpg" alt="Accesorios para Puros" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105">
+                <img loading="lazy" decoding="async" src="assets/img/i-img600x450-1663059583yzmva8208095.jpg" alt="Accesorios para Puros" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105">
                 <div class="absolute inset-0 bg-slate-950/60 flex flex-col justify-center items-center text-center p-6 md:p-12 text-white">
                     <span class="text-red-400 font-mono text-xs uppercase font-bold tracking-widest mb-3">Estilo y Colección</span>
                     <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-3 max-w-2xl drop-shadow-md leading-tight">Accesorios &amp; Pipas Finas</h2>
@@ -376,6 +379,25 @@
         const centerDots = document.querySelectorAll('.c-dot');
         let centerInterval;
 
+        
+        // ENRUTADOR DE SECCIÓN POR HASH (DEEP LINKING)
+        function applyHashRouting() {
+            const hash = window.location.hash;
+            if (hash) {
+                const cleanHash = decodeURIComponent(hash.substring(1)).toLowerCase();
+                const slideMap = {'cigarros-premium': 0, 'cigarros': 0, 'habanos-puros': 1, 'puros': 1, 'encendedores': 2, 'tabaco-liar': 3, 'accesorios': 4};
+                if (slideMap[cleanHash] !== undefined) {
+                    setCenterSlide(slideMap[cleanHash]);
+                    const carouselSec = document.querySelector('.relative.overflow-hidden.w-full.h-\\[380px\\]') || document.querySelector('.relative.overflow-hidden.w-full.h-\\[600px\\]') || document.getElementById('hero-slider');
+                    if (carouselSec) {
+                        carouselSec.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            }
+        }
+        window.addEventListener('load', applyHashRouting);
+        window.addEventListener('hashchange', applyHashRouting);
+            
         function setCenterSlide(index) {
             // Ocultar diapositiva actual
             centerSlides[currentCenterSlide].classList.remove('opacity-100', 'z-10');
@@ -602,6 +624,15 @@
         function handleChatKeyPress(e) {
             if (e.key === 'Enter') enviarMensajeChatbot();
         }
+    </script>
+
+
+    <!-- Quicklink Prefetching for <100ms Transitions -->
+    <script type="module">
+        import { listen } from 'https://unpkg.com/quicklink@2.3.0/dist/quicklink.mjs';
+        window.addEventListener('load', () => {
+            listen({ priority: true });
+        });
     </script>
 
 </body>
