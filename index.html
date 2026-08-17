@@ -241,6 +241,60 @@ if ('serviceWorker' in navigator) {
     </div>
 </header>
 
+<!-- BANDA PROMOCIONAL MARQUEE -->
+<div class="w-full bg-[#f0c14b] border-b border-[#ddb347] text-slate-950 py-2.5 overflow-hidden relative z-50 select-none shadow-sm">
+    <div class="whitespace-nowrap flex gap-8 items-center text-xs font-black uppercase tracking-widest animate-marquee-move">
+        <span class="flex items-center gap-1.5">🚚 ¡ENVÍO GRATIS en compras a partir de $1,500 MXN!</span>
+        <span class="text-slate-900 font-bold">•</span>
+        <span class="flex items-center gap-1.5">💰 5% DE CASHBACK acumulable únicamente con registro activo de correo y teléfono.</span>
+        <span class="text-slate-900 font-bold">•</span>
+        <span class="flex items-center gap-1.5">📦 PRECIO DE MAYOREO: 15% de descuento directo a partir de 10 piezas.</span>
+        <span class="text-slate-900 font-bold">•</span>
+        <span class="flex items-center gap-1.5">⚠️ CONDICIÓN ESTRICTA: Sin registro no hay cashback ni saldo acumulable.</span>
+        <span class="text-slate-900 font-bold">•</span>
+        <span class="flex items-center gap-1.5">🛒 6 BOUTIQUES ESPECIALIZADAS, UN SOLO CARRITO GLOBAL.</span>
+        <span class="text-slate-900 font-bold">•</span>
+        <span class="flex items-center gap-1.5">🔔 Mantén activa tu suscripción para no perder tu porcentaje de cashback.</span>
+        <span class="text-slate-900 font-bold">•</span>
+        <span class="flex items-center gap-1.5">💳 Aceptamos pagos con tarjeta bancaria y depósitos en efectivo.</span>
+        <span class="text-slate-900 font-bold">•</span>
+        <span class="flex items-center gap-1.5">⭐ Productos con garantía y soporte directo en zona Centro.</span>
+        <span class="text-slate-900 font-bold">•</span>
+        <!-- Repeated items for a seamless loop -->
+        <span class="flex items-center gap-1.5">🚚 ¡ENVÍO GRATIS en compras a partir de $1,500 MXN!</span>
+        <span class="text-slate-900 font-bold">•</span>
+        <span class="flex items-center gap-1.5">💰 5% DE CASHBACK acumulable únicamente con registro activo de correo y teléfono.</span>
+        <span class="text-slate-900 font-bold">•</span>
+        <span class="flex items-center gap-1.5">📦 PRECIO DE MAYOREO: 15% de descuento directo a partir de 10 piezas.</span>
+        <span class="text-slate-900 font-bold">•</span>
+        <span class="flex items-center gap-1.5">⚠️ CONDICIÓN ESTRICTA: Sin registro no hay cashback ni saldo acumulable.</span>
+        <span class="text-slate-900 font-bold">•</span>
+        <span class="flex items-center gap-1.5">🛒 6 BOUTIQUES ESPECIALIZADAS, UN SOLO CARRITO GLOBAL.</span>
+        <span class="text-slate-900 font-bold">•</span>
+        <span class="flex items-center gap-1.5">🔔 Mantén activa tu suscripción para no perder tu porcentaje de cashback.</span>
+        <span class="text-slate-900 font-bold">•</span>
+        <span class="flex items-center gap-1.5">💳 Aceptamos pagos con tarjeta bancaria y depósitos en efectivo.</span>
+        <span class="text-slate-900 font-bold">•</span>
+        <span class="flex items-center gap-1.5">⭐ Productos con garantía y soporte directo en zona Centro.</span>
+    </div>
+    <style>
+        @keyframes marqueeMove {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee-move {
+            display: flex;
+            width: max-content;
+            animation: marqueeMove 45s linear infinite;
+        }
+        .animate-marquee-move:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</div>
+<!-- FIN BANDA PROMOCIONAL MARQUEE -->
+
+
 <!-- CART DRAWER (Slide-in right to left) -->
 <div class="fixed inset-0 z-[250]" id="cartDrawer" style="display: none !important;">
     <div class="absolute inset-0 bg-slate-950/60" onclick="closeCartDrawer()"></div>
@@ -1151,7 +1205,7 @@ if ('serviceWorker' in navigator) {
         {sku:'EG-007',nombre:'Encendedor Tokai Desechable',imagen:'assets/img/cigarros-1024x576.webp',precio:'12',precio_original:'16',descuento:'25% OFF',existencias:'12',categoria:'encendedores-gas',descripcion:'Producto premium garantizado de la categoría Encendedores de Gas. Disfruta de la mejor calidad, servicio y garantía en nuestro portal.',modelo_caja:'EG-007',tamano_altavoz:'N/A',caracteristicas:'Garantía oficial del ecosistema, empaque de seguridad y entrega inmediata.'},
         {sku:'EG-008',nombre:'Encendedor Bic Mini Pocket',imagen:'assets/img/cigarros-1024x576.webp',precio:'20',precio_original:'27',descuento:'25% OFF',existencias:'12',categoria:'encendedores-gas',descripcion:'Producto premium garantizado de la categoría Encendedores de Gas. Disfruta de la mejor calidad, servicio y garantía en nuestro portal.',modelo_caja:'EG-008',tamano_altavoz:'N/A',caracteristicas:'Garantía oficial del ecosistema, empaque de seguridad y entrega inmediata.'},
         {sku:'EG-009',nombre:'Encendedor Clipper Neon Rubber',imagen:'assets/img/cigarros-1024x576.webp',precio:'35',precio_original:'47',descuento:'25% OFF',existencias:'12',categoria:'encendedores-gas',descripcion:'Producto premium garantizado de la categoría Encendedores de Gas. Disfruta de la mejor calidad, servicio y garantía en nuestro portal.',modelo_caja:'EG-009',tamano_altavoz:'N/A',caracteristicas:'Garantía oficial del ecosistema, empaque de seguridad y entrega inmediata.'},
-        {sku:'EG-010',nombre:'Encendedor Zippo Black Matte',imagen:'assets/img/cigarros-1024x576.webp',precio:'499',precio_original:'673',descuento:'25% OFF',existencias:'12',categoria:'encendedores-gas',descripcion:'Producto premium garantizado de la categoría Encendedores de Gas. Disfruta de la mejor calidad, servicio y garantía en nuestro portal.',modelo_caja:'EG-010',tamano_altavoz:'N/A',caracteristicas:'Garantía oficial del ecosistema, empaque de seguridad y entrega inmediata.'},
+        {sku:'EG-010',nombre:'Encendedor Zippo Black Matte',imagen:'assets/img/cigarros-1024x576.webp',precio:'1500',precio_original:'673',descuento:'25% OFF',existencias:'12',categoria:'encendedores-gas',descripcion:'Producto premium garantizado de la categoría Encendedores de Gas. Disfruta de la mejor calidad, servicio y garantía en nuestro portal.',modelo_caja:'EG-010',tamano_altavoz:'N/A',caracteristicas:'Garantía oficial del ecosistema, empaque de seguridad y entrega inmediata.'},
         {sku:'EG-011',nombre:'Encendedor Clipper Gold Metal',imagen:'assets/img/cigarros-1024x576.webp',precio:'220',precio_original:'297',descuento:'25% OFF',existencias:'12',categoria:'encendedores-gas',descripcion:'Producto premium garantizado de la categoría Encendedores de Gas. Disfruta de la mejor calidad, servicio y garantía en nuestro portal.',modelo_caja:'EG-011',tamano_altavoz:'N/A',caracteristicas:'Garantía oficial del ecosistema, empaque de seguridad y entrega inmediata.'},
         {sku:'EG-012',nombre:'Encendedor Bic Slim Pastels',imagen:'assets/img/cigarros-1024x576.webp',precio:'22',precio_original:'29',descuento:'25% OFF',existencias:'12',categoria:'encendedores-gas',descripcion:'Producto premium garantizado de la categoría Encendedores de Gas. Disfruta de la mejor calidad, servicio y garantía en nuestro portal.',modelo_caja:'EG-012',tamano_altavoz:'N/A',caracteristicas:'Garantía oficial del ecosistema, empaque de seguridad y entrega inmediata.'},
         {sku:'EG-013',nombre:'Encendedor Djeep Tribal Limited',imagen:'assets/img/cigarros-1024x576.webp',precio:'45',precio_original:'60',descuento:'25% OFF',existencias:'12',categoria:'encendedores-gas',descripcion:'Producto premium garantizado de la categoría Encendedores de Gas. Disfruta de la mejor calidad, servicio y garantía en nuestro portal.',modelo_caja:'EG-013',tamano_altavoz:'N/A',caracteristicas:'Garantía oficial del ecosistema, empaque de seguridad y entrega inmediata.'},
